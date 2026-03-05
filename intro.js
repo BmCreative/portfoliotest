@@ -1,12 +1,18 @@
+if (window.introAlreadyRan) return;
+window.introAlreadyRan = true;
+
 (() => {
   const intro = document.getElementById("intro");
-  const wordEl = document.getElementById("introWord");
+  const wordEl = document.getElementById("introWord"); // W MAIÚSCULO
   if (!intro || !wordEl) return;
+
+  // garante que não tem lixo dentro
+  wordEl.innerHTML = "";
 
   const text = "Olá,";
   const letterDelay = 220;
   const afterPause = 520;
-  const maxWait = 3500; // fail-safe: nunca trava branco
+  const maxWait = 3500; // fail-safe
 
   let totalWidth = 0;
   let i = 0;
@@ -25,7 +31,7 @@
     span.textContent = char;
     wordEl.appendChild(span);
 
-    // empurra a palavra pra esquerda conforme entra letra nova (nascimento no centro)
+    // empurra pra esquerda conforme entra letra nova
     const w = span.getBoundingClientRect().width;
     totalWidth += w;
     const shift = totalWidth / 2;
