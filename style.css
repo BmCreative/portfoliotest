@@ -1,0 +1,71 @@
+:root {
+    --bg-offwhite: #fdfbf7;
+    --text-dark: #1c1c1c;
+}
+
+body {
+    background-color: var(--bg-offwhite);
+    color: var(--text-dark);
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.bg-offwhite {
+    background-color: var(--bg-offwhite);
+}
+
+.text-darkgray {
+    color: var(--text-dark);
+}
+
+.project-card {
+    overflow: hidden;
+    border-radius: 1rem;
+    position: relative;
+    background: #e5e5e5;
+    transform: translateZ(0);
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    color: white;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.project-card:hover .project-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.skill-number-container {
+    font-variant-numeric: tabular-nums;
+}
