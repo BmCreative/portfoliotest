@@ -132,3 +132,43 @@ document.addEventListener('DOMContentLoaded', () => {
         initAnimations();
     }, 100);
 });
+const word = document.getElementById("introWord")
+
+if(word){
+
+const text = "Olá,"
+let i = 0
+
+function addLetter(){
+
+if(i < text.length){
+
+const span = document.createElement("span")
+span.textContent = text[i]
+
+word.appendChild(span)
+
+setTimeout(()=>{
+span.classList.add("show")
+},50)
+
+i++
+
+setTimeout(addLetter,220)
+
+}else{
+
+setTimeout(()=>{
+
+document.getElementById("intro").style.transform="translateY(-100%)"
+document.getElementById("intro").style.transition="transform .8s ease"
+
+},600)
+
+}
+
+}
+
+addLetter()
+
+}
