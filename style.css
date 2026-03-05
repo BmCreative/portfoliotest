@@ -69,3 +69,37 @@ body {
 .skill-number-container {
     font-variant-numeric: tabular-nums;
 }
+/* INTRO */
+
+#intro{
+position:fixed;
+inset:0;
+background:#f6f1ea;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+font-family:"Montserrat", sans-serif;
+font-weight:800;
+font-size:120px;
+}
+
+#introWord{
+display:flex;
+}
+
+#introWord span{
+display:inline-block;
+opacity:0;
+transform:translateY(60px) scale(.5);
+}
+
+#introWord span.show{
+animation:pop .6s cubic-bezier(.2,1.2,.4,1) forwards;
+}
+
+@keyframes pop{
+0%{opacity:0;transform:translateY(60px) scale(.5);}
+60%{transform:translateY(-10px) scale(1.1);}
+100%{opacity:1;transform:translateY(0) scale(1);}
+}
